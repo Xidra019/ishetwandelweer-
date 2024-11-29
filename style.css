@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Tirhuta:700|Noto%20Sans%20Tirhuta:400');
+
+:root {
+--text: hsl(140, 18%, 3%);
+--background: hsl(150, 12%, 97%);
+--primary: hsl(145, 14%, 55%);
+--secondary: hsl(270, 14%, 72%);
+--accent: hsl(307, 14%, 64%);
+
+}
+
+
+
+body {
+  font-family: 'Noto Sans Tirhuta';
+  font-weight: 400;
+  color: hsl(145, 14%, 20%);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Noto Sans Tirhuta';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+
+.card{
+    background-color: hsl(145, 14%, 95%);
+    width: 50rem;
+    border-radius: 15px;
+    margin: 5rem auto;
+    padding: 2rem;
+}
+
+#raincheck{
+    font-size: 1.333rem;
+    background-color:hsl(145, 14%, 20%);
+    color: hsl(145, 14%, 95%);
+    border-radius: 15px;
+    padding: 1rem;
+
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Is het Wandelweer</title>
+</head>
+<body>
+
+    <div class="card">
+      <h2>Is het wandelweer voor Charlie?</h2>
+    
+      <p id="temp"></p>
+      <p id="feeltemp"></p>
+      <p id="wetnes"></p>
+      <p id="raincheck"></p>
+    
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+
+const apiKey = "72295599cef3535a916a2eb864e462ac";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Enschede,NL";
+
+async function checkWeather(){
+    const response = await fetch(apiUrl + `&appid=${apiKey}`);
+    var data = await response.json();
+
+    console.log(data);
+
+    const temperature = data.main.temp;
+    const feeltemperature = data.main.feels_like;
+    const weather = data.weather[0].main;
+    console.log(weather);
+
+    document.getElementById("temp").innerHTML = `Het is ${temperature}°C buiten`;
+    document.getElementById("feeltemp").innerHTML = `het voelt voor Charlie als ${feeltemperature}°C`;
+
+
+
+    if (weather == "rain" || weather == "storm") {
+
+        document.getElementById("raincheck").innerHTML = "Ieuw, Charlie voelt nattigheid! Binnen plassen is onvermijdelijk! Geen weer om Charlie naar buiten te doen. "
+        document.getElementById("wetnes").innerHTML = "Het regent / stormt buiten"
+
+    } else if (temperature < 6) {
+
+        document.getElementById("raincheck").innerHTML = "Brrrr... Het is geen goed weer voor Charlie om naar buiten te gaan! Jij barbaar! "
+        document.getElementById("wetnes").innerHTML = "Het is droog buiten"
+
+    } else if (temperature < 6 && weather == "rain" || weather == "storm") {
+        document.getElementById("raincheck").innerHTML = "Brrrr... en ieuw..... Hou je nog wel van Charlie 🥺"
+        document.getElementById("wetnes").innerHTML = "Het regent / stormt buiten"
+
+    } else {
+        document.getElementById("raincheck").innerHTML = "Het is weer voor Charlie om te wandelen!!"
+    };
+
+
+
+}
+
+checkWeather();
+
+
+
+</script>
