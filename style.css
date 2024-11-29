@@ -39,7 +39,8 @@ small {font-size: 0.750rem; /* 12px */}
 
 .card{
     background-color: hsl(145, 14%, 95%);
-    width: 50rem;
+    width: 70%;
+    max-width: 40rem;
     border-radius: 15px;
     margin: 5rem auto;
     padding: 2rem;
@@ -51,5 +52,7 @@ small {font-size: 0.750rem; /* 12px */}
     color: hsl(145, 14%, 95%);
     border-radius: 15px;
     padding: 1rem;
+    margin-top: 2rem;
 
 }
+
